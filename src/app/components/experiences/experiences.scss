@@ -1,0 +1,45 @@
+.experiences {
+
+  background: #121212;
+
+  .section-badge {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    color: var(--gold);
+  }
+
+  .cards-container {
+    display: grid;
+    gap: 25px;
+  }
+
+  .experience-card {
+
+    padding: 35px;
+
+    transition: .4s ease;
+
+    i {
+      font-size: 2.5rem;
+      color: var(--gold);
+
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #cfcfcf;
+    }
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+  }
+
+}

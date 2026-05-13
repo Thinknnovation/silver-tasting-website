@@ -1,0 +1,24 @@
+.testimonials {
+
+  .testimonial-card {
+
+    max-width: 900px;
+
+    margin: 60px auto 0;
+
+    padding: 60px;
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.8;
+      color: #d5d5d5;
+    }
+
+    h4 {
+      margin-top: 30px;
+      color: var(--gold);
+    }
+
+  }
+
+}

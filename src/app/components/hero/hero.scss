@@ -1,0 +1,101 @@
+.hero {
+  min-height: 100vh;
+
+  background:
+    linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8)),
+    url('../../assets/img/hero-whiskey.png');
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+
+    .badge-premium {
+      display: inline-block;
+
+      background: rgba(255,255,255,.1);
+
+      padding: 10px 20px;
+
+      border-radius: 50px;
+
+      margin-bottom: 30px;
+
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    h1 {
+      font-size: 5rem;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      color: #d5d5d5;
+    }
+
+    p {
+      font-size: 1.2rem;      
+      color: var(--gold);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn-outline-light {
+
+      border: 1px solid rgba(255,255,255,.3);
+
+      color: white;
+
+      padding: 14px 32px;
+
+      border-radius: 50px;
+
+      background: transparent;
+
+      transition: .3s ease;
+
+      &:hover {
+
+        background: white;
+
+        color: black;
+
+      }
+
+    }
+  }
+}
+
+@media(max-width: 768px) {
+
+  .hero {
+
+    text-align: center;
+
+    .hero-content {
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+    }
+
+  }
+
+}

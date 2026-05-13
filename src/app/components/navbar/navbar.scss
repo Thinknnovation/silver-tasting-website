@@ -1,0 +1,27 @@
+.navbar {
+  padding: 20px 0;
+  background: rgba(0,0,0,.4);
+  backdrop-filter: blur(10px);
+
+  .navbar-brand {
+    color: white;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+
+  .nav-link {
+    color: white;
+    margin-left: 20px;
+    transition: .3s;
+
+    &:hover {
+      color: var(--gold);
+    }
+  }
+
+  .navbar-toggler {
+    border: none;
+    color: white;
+    font-size: 2rem;
+  }
+}

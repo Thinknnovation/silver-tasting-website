@@ -1,0 +1,40 @@
+ng new silver-tasting-website --standalone --routing --style=scss
+
+cd silver-tasting-website
+
+npm install bootstrap
+
+npm install gsap
+
+npm install bootstrap-icons
+
+ng g c pages/home --standalone
+
+ng g c components/navbar --standalone
+ng g c components/hero --standalone
+ng g c components/experiences --standalone
+ng g c components/events --standalone
+ng g c components/gallery --standalone
+ng g c components/testimonials --standalone
+ng g c components/contact --standalone
+ng g c components/footer --standalone
+
+
+angular.json
+
+
+"styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.min.css",
+  "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+  "src/styles.scss"
+],
+
+
+
+git init
+git commit -m "first commit"
+git branch -M main
+-- git remote add origin https://github.com/Thinknnovation/silver-tasting-website.git
+
+git commit -m "initial commit"
+git push -u origin main
