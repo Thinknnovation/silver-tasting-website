@@ -1,3 +1,5 @@
+@use '../../../styles/glassmorphism' as glass;
+
 .gallery {
 
   background: #121212;
@@ -19,20 +21,56 @@
   }
 
   .gallery-item {
-
     min-height: 350px;
-
-    border-radius: 24px;
-
+    border-radius: 28px;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+    @include glass.premium-transition;
 
-    transition: .4s ease;
-
-    &:hover {
-      transform: scale(1.02);
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(6, 6, 6, 0.32);
+      backdrop-filter: blur(6px);
+      opacity: 0.68;
+      transition: opacity 0.35s ease, backdrop-filter 0.35s ease;
+      pointer-events: none;
     }
 
+    &::after {
+      content: 'VER GALERÍA';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      color: rgba(255, 255, 255, 0.92);
+      letter-spacing: 0.22em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      pointer-events: none;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-soft);
+
+      &::before {
+        opacity: 0.48;
+        backdrop-filter: blur(10px);
+      }
+
+      &::after {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
   }
 
   .item-1 {

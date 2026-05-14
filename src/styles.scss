@@ -1,15 +1,35 @@
+@use './styles/glassmorphism' as glass;
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 :root {
-  --black: #0f0f0f;
+  --black: #090909;
+  --surface: rgba(255, 255, 255, 0.06);
+  --surface-strong: rgba(255, 255, 255, 0.1);
+  --surface-muted: rgba(255, 255, 255, 0.04);
+  --backdrop: rgba(12, 12, 12, 0.78);
   --gold: #c89b3c;
   --gold-light: #d6b15a;
   --silver: #c0c0c0;
   --white: #f5f5f5;
   --brown: #4e342e;
+  --text-muted: #bab8b0;
+  --shadow-soft: 0 22px 55px rgba(0, 0, 0, 0.22);
+  --transition: all .35s ease;
+}
 
-  --transition: all .3s ease;
+body {
+  background: radial-gradient(circle at top, rgba(210, 170, 80, 0.06), transparent 28%),
+    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.03), transparent 28%),
+    #050505;
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  min-height: 100%;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
 }
 
 * {
@@ -87,8 +107,17 @@ section {
 }
 
 .glass-card {
-  background: rgba(255,255,255,.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 24px;
+  @include glass.glass-surface(rgba(255, 255, 255, 0.05), 16px, rgba(255, 255, 255, 0.1), 0 24px 70px rgba(0, 0, 0, 0.22));
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 55%);
+    opacity: 0.18;
+  }
 }

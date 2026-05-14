@@ -1,57 +1,86 @@
-<nav class="navbar navbar-expand-lg fixed-top" #navbar>
-  <div class="container-custom">
+<nav
+  class="navbar navbar-expand-lg fixed-top"
+  
+  #navbar>
 
+  <!-- style="background: rgba(0, 0, 0, 0.95) !important; background-image: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; box-shadow: none !important;"-->
+  <div class="container-custom">
     <a class="navbar-brand" href="#" #navbarBrand>
       SILVER TASTING
     </a>
 
     <button
-      class="navbar-toggler"
+      class="navbar-toggler mobile-toggle"
       type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarContent">
+      [attr.aria-label]="isMobileOpen ? 'Cerrar menu' : 'Abrir menu'"
+      [attr.aria-expanded]="isMobileOpen"
+      aria-controls="navbarContent"
+      (click)="toggleMenu()"
+      #hamburger>
 
-      <i class="bi bi-list"></i>
+      <span class="toggle-aura"></span>
+      <span class="burger-line line-1"></span>
+      <span class="burger-line line-2"></span>
+      <span class="burger-line line-3"></span>
 
     </button>
 
     <div
       class="collapse navbar-collapse"
-      id="navbarContent">
+      id="navbarContent"
+      #navbarCollapse
+      [class.show]="isMobileOpen"
+      [class.opened]="isMobileOpen">
+
+      <div class="mobile-menu-ambient" aria-hidden="true">
+        <span class="ambient-glow glow-gold"></span>
+        <span class="ambient-glow glow-silver"></span>
+        <span class="ambient-line line-top"></span>
+        <span class="ambient-line line-bottom"></span>
+      </div>
+
+      <div class="mobile-menu-frame" aria-hidden="true"></div>
 
       <ul class="navbar-nav ms-auto">
-
         <li class="nav-item">
-          <a class="nav-link" href="#hero">
+          <a class="nav-link" href="#hero" (click)="closeMenu()">
+            <span class="nav-index">01</span>
             Inicio
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#events">
+          <a class="nav-link" href="#events" (click)="closeMenu()">
+            <span class="nav-index">02</span>
             Eventos
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#gallery">
-            Galería
+          <a class="nav-link" href="#gallery" (click)="closeMenu()">
+            <span class="nav-index">03</span>
+            Galeria
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#contact">
+          <a class="nav-link" href="#contact" (click)="closeMenu()">
+            <span class="nav-index">04</span>
             Contacto
           </a>
         </li>
-
       </ul>
 
-      <button class="btn-gold ms-4">
+      <button class="btn-gold ms-4 mobile-menu-cta" (click)="closeMenu()">
         Reservar
       </button>
-
     </div>
+  </div>
 
+  <div
+    class="mobile-menu-backdrop"
+    #mobileMenuOverlay
+    (click)="closeMenu()"
+    [class.active]="isMobileOpen">
   </div>
 </nav>

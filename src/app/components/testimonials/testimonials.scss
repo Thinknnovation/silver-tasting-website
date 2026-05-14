@@ -1,22 +1,47 @@
+@use '../../../styles/glassmorphism' as glass;
+
 .testimonials {
 
   .testimonial-card {
+    @include glass.glass-card;
+    background: rgba(18, 18, 18, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 50px 48px;
+    max-width: 860px;
+    position: relative;
+    @include glass.premium-transition;
 
-    max-width: 900px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 40%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent);
+      pointer-events: none;
+      opacity: 0.22;
+    }
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.22);
+    }
 
     margin: 60px auto 0;
 
-    padding: 60px;
-
     p {
-      font-size: 1.5rem;
-      line-height: 1.8;
-      color: #696969;
+      font-size: 1.45rem;
+      line-height: 1.95;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
     }
 
     h4 {
-      margin-top: 30px;
       color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin: 0;
     }
 
   }
