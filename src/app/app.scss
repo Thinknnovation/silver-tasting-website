@@ -1,0 +1,188 @@
+// Luxury Loader Styles
+.luxury-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  backdrop-filter: blur(20px);
+  z-index: 9999;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 40%, rgba(184, 134, 11, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+    animation: subtleGlow 4s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes subtleGlow {
+  0% { opacity: 0.4; }
+  100% { opacity: 0.8; }
+}
+
+.loader-content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.brand-logo {
+  margin-bottom: 3rem;
+
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    color: #f4f4f4;
+    margin: 0;
+    text-shadow: 0 0 30px rgba(184, 134, 11, 0.5);
+    letter-spacing: 0.1em;
+  }
+
+  .tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    color: #b8860b;
+    margin: 0.5rem 0 0;
+    opacity: 0.8;
+    letter-spacing: 0.05em;
+  }
+}
+
+.progress-container {
+  width: clamp(200px, 50vw, 400px);
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(184, 134, 11, 0.3);
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(184, 134, 11, 0.8);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.luxury-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(184, 134, 11, 0.3);
+  border-radius: 50%;
+  animation: rotateGlow 6s linear infinite;
+}
+
+@keyframes rotateGlow {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #ffd700;
+  border-radius: 50%;
+  animation: sparkleFade 2.5s ease-in-out infinite;
+
+  &.sparkle-1 {
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+  }
+
+  &.sparkle-2 {
+    top: 70%;
+    right: 25%;
+    animation-delay: 0.8s;
+  }
+
+  &.sparkle-3 {
+    bottom: 30%;
+    left: 70%;
+    animation-delay: 1.6s;
+  }
+}
+
+@keyframes sparkleFade {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .luxury-loader {
+    padding: 2rem;
+  }
+
+  .brand-logo {
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .tagline {
+      font-size: 1rem;
+    }
+  }
+
+  .progress-container {
+    width: 80vw;
+  }
+
+  .glow-ring {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo h1 {
+    font-size: 2rem;
+  }
+
+  .progress-container {
+    width: 90vw;
+    height: 2px;
+  }
+
+  .glow-ring {
+    width: 150px;
+    height: 150px;
+  }
+}

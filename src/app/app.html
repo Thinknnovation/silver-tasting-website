@@ -1,2 +1,21 @@
+<!-- Loader Luxury -->
+<div #loader class="luxury-loader" *ngIf="isLoading()">
+  <div class="loader-content">
+    <div #logo class="brand-logo">
+      <h1>Silver Tasting</h1>
+      <p class="tagline">Premium Whiskey Experiences</p>
+    </div>
+    <div class="progress-container">
+      <div #progressBar class="progress-bar"></div>
+    </div>
+    <div class="luxury-elements">
+      <div class="glow-ring"></div>
+      <div class="sparkle sparkle-1"></div>
+      <div class="sparkle sparkle-2"></div>
+      <div class="sparkle sparkle-3"></div>
+    </div>
+  </div>
+</div>
 
+<!-- Main App Content -->
 <router-outlet />

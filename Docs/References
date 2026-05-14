@@ -8,6 +8,7 @@ npm install gsap
 
 npm install bootstrap-icons
 
+
 ng g c pages/home --standalone
 
 ng g c components/navbar --standalone
@@ -18,7 +19,9 @@ ng g c components/gallery --standalone
 ng g c components/testimonials --standalone
 ng g c components/contact --standalone
 ng g c components/footer --standalone
-
+npm install @studio-freight/lenis
+npm install lenis
+npm prune
 
 angular.json
 
@@ -34,7 +37,62 @@ angular.json
 git init
 git commit -m "first commit"
 git branch -M main
--- git remote add origin https://github.com/Thinknnovation/silver-tasting-website.git
+git remote add origin https://github.com/Thinknnovation/silver-tasting-website.git
+
+git add .
+git status
 
 git commit -m "initial commit"
 git push -u origin main
+
+
+
+Smooth Reveal
+gsap.from('.reveal', {
+  opacity: 0,
+  scale: 0.95,
+  duration: 1.2
+});
+
+
+
+Timing Recommendations
+Animation	Duration
+Hover	0.3s
+Reveal	0.8s - 1.2s
+Hero Intro	1.5s
+Page Transition	0.5s
+
+
+Animation Rules
+
+Always prioritize:
+
+smoothness
+elegance
+responsiveness
+performance
+
+
+---
+
+# design-system.md
+
+```md id="zvctv8"
+# Silver Tasting — Design System
+
+# Design Tokens
+
+## Colors
+
+```scss
+:root {
+
+  --black: #0F0F0F;
+  --gold: #C89B3C;
+  --gold-light: #D6B15A;
+  --silver: #C0C0C0;
+  --white: #F5F5F5;
+  --brown: #4E342E;
+
+}

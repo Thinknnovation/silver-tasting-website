@@ -1,38 +1,20 @@
-<section
-  class="hero"
-  id="hero">
-
+<section class="hero" id="hero" #heroSection>
   <div class="overlay"></div>
-
-  <div class="container-custom hero-content">
-
-    <br>
-    <!-- <span class="badge-premium">
-      Experiencias Premium
-    </span> -->
-
-    
-
-    <p>
-      La Mesa · Cundinamarca · Colombia
-    </p>
-    
-    <h1>
-      Una experiencia que despierta los sentidos.
-    </h1>
-
-    <div class="hero-buttons">
-
-      <button class="btn-gold">
-        Reservar experiencia
-      </button>
-
-      <button class="btn-outline-light">
-        Ver eventos
-      </button>
-
-    </div>
-
+  <div class="hero-effects">
+    <div class="hero-glow"></div>
+    <div class="hero-line"></div>
+    <div class="hero-shimmer"></div>
   </div>
 
+  <div class="container-custom hero-content" #heroContent>
+    <span class="hero-category">Experiencias Premium</span>
+    <p class="hero-location">La Mesa · Cundinamarca · Colombia</p>
+
+    <h1>Una experiencia que despierta los sentidos.</h1>
+
+    <div class="hero-buttons">
+      <button class="btn-gold">Reservar experiencia</button>
+      <button class="btn-outline-light">Ver eventos</button>
+    </div>
+  </div>
 </section>

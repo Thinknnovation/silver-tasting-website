@@ -19,7 +19,11 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
+  overscroll-behavior-y: contain;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+  min-height: 100%;
 }
 
 body {
@@ -27,7 +31,20 @@ body {
   color: var(--white);
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  min-height: 100%;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
 }
+
+@media (max-width: 980px) {
+  html, body {
+    touch-action: pan-y;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+} 
 
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Playfair Display', serif;

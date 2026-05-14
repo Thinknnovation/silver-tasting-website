@@ -2,6 +2,10 @@
 
   background: #121212;
 
+  .section-title {
+    color: var(--gold);
+  }
+
   .gallery-grid {
 
     margin-top: 60px;
@@ -32,19 +36,19 @@
   }
 
   .item-1 {
-    background-image: url('../../assets/img/gallery-1.png');
+    background-image: url('/assets/img/gallery-1.png');
   }
 
   .item-2 {
-    background-image: url('../../assets/img/gallery-2.png');
+    background-image: url('/assets/img/gallery-2.png');
   }
 
   .item-3 {
-    background-image: url('../../assets/img/gallery-3.png');
+    background-image: url('/assets/img/gallery-3.png');
   }
 
   .item-4 {
-    background-image: url('../../assets/img/gallery-4.png');
+    background-image: url('/assets/img/gallery-4.png');
   }
 
 }

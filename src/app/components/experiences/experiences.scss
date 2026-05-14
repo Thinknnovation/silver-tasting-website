@@ -10,9 +10,15 @@
     color: var(--gold);
   }
 
+  .section-title {
+    color: #fff;
+  }
+
   .cards-container {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 25px;
+    align-items: start;
   }
 
   .experience-card {
@@ -30,10 +36,12 @@
 
     h3 {
       margin-bottom: 15px;
+      color: #fff;
     }
 
     p {
-      color: #cfcfcf;
+      /*color: #cfcfcf;*/
+      color: var(--gold);
     }
 
     &:hover {

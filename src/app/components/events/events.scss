@@ -1,5 +1,9 @@
 .events {
 
+  p{
+      color: #696969;
+    }
+
   .event-card {
 
     background: #181818;
@@ -9,6 +13,11 @@
     overflow: hidden;
 
     transition: .4s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 
     &:hover {
       transform: translateY(-10px);
@@ -20,28 +29,39 @@
 
       background:
         linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.4)),
-        url('../../assets/img/event-1.png');
+        url('/assets/img/event-1.png');
 
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
 
     }
 
     .image-2 {
       background:
         linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.4)),
-        url('../../assets/img/event-2.png');
+        url('/assets/img/event-2.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .image-3 {
       background:
         linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.4)),
-        url('../../assets/img/event-3.png');
+        url('/assets/img/event-3.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .event-content {
 
       padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
 
       .event-date {
         color: var(--gold);
@@ -49,10 +69,16 @@
 
       h3 {
         margin: 20px 0;
+        color: #fff
       }
 
       p {
         color: #cfcfcf;
+      }
+
+      span {
+
+        color: var(--gold)
       }
 
       .event-footer {
